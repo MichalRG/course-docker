@@ -2,7 +2,9 @@ FROM node
 
 WORKDIR /app
 
-COPY package.json /app
+# it is optmiized to copy package.json first and then run npm install,
+# so that it can cache the npm install step and not run it again if the package.json file has not changed
+COPY package.json /app 
 
 RUN npm install
 
