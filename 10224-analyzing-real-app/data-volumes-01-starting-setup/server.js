@@ -14,7 +14,6 @@ app.use("/feedback", express.static("feedback"));
 
 app.get("/", (req, res) => {
   const filePath = path.join(__dirname, "pages", "feedback.html");
-  console.log("TEST");
   res.sendFile(filePath);
 });
 
